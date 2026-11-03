@@ -1,0 +1,10 @@
+# dsh-chrome-desktop bundle patch.
+#
+# Selecting this bundle inserts one host row. The host half provisions a
+# Chrome/Edge app-window launcher in the user's home directory (launcher
+# scripts, icon, launcher.config.json) and creates the desktop and start-menu
+# shortcuts that point at it. Nothing here runs until the row is loaded.
+
+- insert:
+    - id: chrome-desktop
+      name: dsh-chrome-desktop

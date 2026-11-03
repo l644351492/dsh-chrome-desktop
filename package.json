@@ -1,0 +1,65 @@
+{
+  "name": "dsh-chrome-desktop",
+  "version": "0.1.0",
+  "description": "Turn the DeepSeek Harness Web UI into a desktop app: provisions a Chrome/Edge app window plus desktop and start-menu shortcuts, with silent backend start and a startup splash.",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "desktop",
+    "chrome",
+    "app-window",
+    "windows"
+  ],
+  "license": "MIT",
+  "author": "l644351492 <644351492@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l644351492/dsh-chrome-desktop.git"
+  },
+  "homepage": "https://github.com/l644351492/dsh-chrome-desktop#readme",
+  "bugs": {
+    "url": "https://github.com/l644351492/dsh-chrome-desktop/issues"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "assets/",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "os": [
+    "win32"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-host-webserver": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-host-webserver": {
+      "optional": true
+    }
+  }
+}
