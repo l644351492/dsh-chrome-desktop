@@ -147,7 +147,9 @@ if (existingRef.status === 404 || existingRef.status === 409) {
 
 const pending = [...files]
 if (empty) {
-  const seed = pending.shift()
+  // Seed with the first file, but keep it in `pending`: the tree below is a full
+  // snapshot (no base_tree), so anything missing from it would be deleted again.
+  const seed = files[0]
   const seedContent = await readFile(seed.full)
   const seeded = await call(token, 'PUT', `/repos/${owner}/${repoName}/contents/${seed.path}`, {
     message: 'chore: initialize repository',
